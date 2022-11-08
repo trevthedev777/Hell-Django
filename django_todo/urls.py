@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from todo.views import get_todo_list
 
+# like @app.route in Flask framework
 urlpatterns = [
     path('admin/', admin.site.urls),
     # typically the path url takes 3 args
