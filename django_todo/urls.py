@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from todo.views import get_todo_list
+from todo import views
 
 # like @app.route in Flask framework
 urlpatterns = [
@@ -24,5 +24,9 @@ urlpatterns = [
     # 1. url = user types in
     # 2. view func that it will return
     # 3. name param
-    path('', get_todo_list, name='get_todo_list')
+    path('', views.get_todo_list, name='get_todo_list'),
+    path('add', views.add_item, name='add_item'),
+    path('edit/<item_id>', views.edit_item, name='edit_item'),
+    path('toggle/<item_id>', views.toggle_item, name='toggle'),
+    path('delete/<item_id>', views.delete_item, name='delete'),
 ]

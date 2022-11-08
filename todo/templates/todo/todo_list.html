@@ -8,5 +8,37 @@
 </head>
 <body>
     <h1>Things i need to do</h1>
+    <!-- template var -->
+    <!-- {{ items }} -->
+    <table>
+        {% for item in items %}
+            <tr>
+            {% if item.done %}
+                <td><strike>{{ item.name }}</strike></td>
+            {% else %}
+                <td>{{ item.name }}</td>
+            {% endif %}
+                <td>
+                    <a href="/toggle/{{ item.id }}">
+                        <button>Toggle</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/edit/{{ item.id }}">
+                        <button>Edit</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/delete/{{ item.id }}">
+                        <button>delete</button>
+                    </a>
+                </td>
+                <!-- <td>{{ item.done }}</td> -->
+            </tr>
+            {% empty %}
+            <tr><td>You have nothing to do</td></tr>
+        {% endfor %}
+    </table>
+    <a href="/add">Add an item</a>
 </body>
 </html>
