@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 if os.path.isfile("env.py"):
     import env
-from env import ANY_SECRET_KEY
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
