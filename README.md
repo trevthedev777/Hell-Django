@@ -121,3 +121,11 @@ We need to then run migrations:
 python3 manage.py migrate
 ```
 10. Pushing our changes to github
+```
+git push origin master
+```
+
+11. Attempting First Deployment to Heroku
+```
+git push heroku master
+```
