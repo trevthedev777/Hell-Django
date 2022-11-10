@@ -127,5 +127,10 @@ git push origin master
 
 11. Attempting First Deployment to Heroku
 ```
-git push heroku master
+git push heroku main
+```
+
+12. Create `Procfile`
+```
+web:gunicorn <django_todo>.wsgi:application
 ```
